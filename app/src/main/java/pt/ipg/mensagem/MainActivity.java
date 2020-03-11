@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -17,11 +18,10 @@ public class MainActivity extends AppCompatActivity {
     public void enviaMensagem(View view) {
         Intent intent = new Intent(this, MostraInfoActivity.class);
 
-        String mensagem = "Boas pessoas daqui fala o Feromonas";
+        EditText editTextMensagem = (EditText) findViewById(R.id.editTextMensagem);
+        String mensagem = editTextMensagem.getText().toString();
         intent.putExtra("MENSAGEM", mensagem);
 
         startActivity(intent);
-
-        //todo: enviar mensagem
     }
 }
