@@ -2,6 +2,7 @@ package pt.ipg.mensagem;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -14,6 +15,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void enviaMensagem(View view) {
+        Intent intent = new Intent(this, MostraInfoActivity.class);
+
+        String mensagem = "Boas pessoas daqui fala o Feromonas";
+        intent.putExtra("MENSAGEM", mensagem);
+
+        startActivity(intent);
+
         //todo: enviar mensagem
     }
 }
